@@ -1,0 +1,150 @@
+﻿*
+{
+    font-family: Verdana;
+}
+
+body
+{
+    /* 
+    Clears white space around the body and gives it a dark gray color.
+    */
+    margin: 0;
+    background-image: url(Images/SeaPattern.jpg);
+}
+
+a
+{
+  /*
+    Clears the underline on normal links, and gives them a purple text color.
+  */
+  text-decoration: none;
+  color: #4628C4;
+}
+
+a:hover
+{
+  /*
+    Underlines links when the user hovers the mouse over them.
+  */
+  text-decoration : underline;
+}
+
+#Header
+{
+    background-image: url(Images/Header.jpg);
+    background-repeat: no-repeat;    
+    width: 844px;
+    height: 139px;
+    display: block;
+    color: #FFFFFF;
+}
+
+h1
+{
+    padding: 0px;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.myClass
+{
+    color: Fuchsia;
+}
+
+#PageWrapper
+{
+    width: 844px;
+    background-color: #005C99;
+    margin: 20px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+#MenuWrapper
+{
+    height: 30px;
+    background-color: #000066;
+    border: 1px #4e667d solid;
+    display: block;
+    padding: 4px;
+    white-space: nowrap;
+    color: #FFFFFF;
+}
+
+.MainMenu
+{
+    /*
+    The Menu gets a white border on all four sides.
+    */
+    width: 827px;
+    height: 20px;
+    background-color : #cccccc;
+    border: 1px solid white;      
+}
+
+.MainMenu ul li
+{
+  /*
+    Gives the four menu items in the main menu a width of 200px each
+  */
+  width: 150px;
+}
+
+#MainContent
+{
+    background-color: #e1e1e1;    
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 450px;
+}
+
+#Footer
+{
+    color: #FFFFFF;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+.style1
+{
+    width: 82px;
+}
+
+ul.level1
+{
+  /* Defines the appearance of main menu items. */
+  font-size: 14px;
+  height: 19px;
+  line-height: 19px;
+}
+
+ul.level1 .selected
+{
+  /* Defines the appearance of active menu items */
+  background-color: #FFFFCC;
+}
+
+a.level1
+{
+  /* Adds some white space to the left of the main menu item text */
+  margin-left: 5px;
+}
+
+a.level2
+{
+  /* Defines the appearance of the sub menu items */
+  background-color: #cccccc;
+  padding-left: 8px;
+}
+
+a.level1:hover, a.level2:hover
+{
+    /* Defines the hover style for the main and sub items */
+    background-color: #FFFFCC;
+}
+
+.ErrorMessage
+{
+    color: red;
+}

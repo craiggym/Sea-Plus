@@ -42,18 +42,28 @@
      </p>
           <table class="auto-style1">
                <tr>
-                    <td class="auto-style3">Date</td>
+                    <td class="auto-style3">Date (MM/DD/YYYY)</td>
                     <td class="auto-style5">
-                         <asp:DropDownList ID="DropDownListDate" runat="server" Width="180px">
-                              <asp:ListItem>Select Date</asp:ListItem>
-                              <asp:ListItem>01/15/2016</asp:ListItem>
-                              <asp:ListItem>01/16/2016</asp:ListItem>
-                              <asp:ListItem>05/15/2016</asp:ListItem>
-                              <asp:ListItem>05/16/2016</asp:ListItem>
+                         <asp:TextBox ID="TextBoxDate" runat="server" Width="180px"></asp:TextBox>
+                    </td>
+                    <td>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxDate" CssClass="auto-style6" ErrorMessage="Date is required."></asp:RequiredFieldValidator>
+                         <br />
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxDate" CssClass="auto-style6" ErrorMessage="Please Enter Valid Date " ValidationExpression="^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{4}$"></asp:RegularExpressionValidator>
+                    </td>
+               </tr>
+               <tr>
+                    <td class="auto-style3">Time</td>
+                    <td class="auto-style5">
+                         <asp:DropDownList ID="DropDownListTime" runat="server" Width="180px">
+                              <asp:ListItem>Select Time</asp:ListItem>
+                              <asp:ListItem>17:30</asp:ListItem>
+                              <asp:ListItem>18:30</asp:ListItem>
+                              <asp:ListItem>19:30</asp:ListItem>
                          </asp:DropDownList>
                     </td>
                     <td>
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownListDate" CssClass="auto-style6" ErrorMessage="Date is required." InitialValue="Select Date"></asp:RequiredFieldValidator>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="DropDownListTime" CssClass="auto-style6" ErrorMessage="Time is required." InitialValue="Select Time"></asp:RequiredFieldValidator>
                     </td>
                </tr>
                <tr>
@@ -63,7 +73,6 @@
                               <asp:ListItem>Select View</asp:ListItem>
                               <asp:ListItem>Upper</asp:ListItem>
                               <asp:ListItem>Lower</asp:ListItem>
-                              <asp:ListItem>Under Sea</asp:ListItem>
                               <asp:ListItem>Balcony</asp:ListItem>
                          </asp:DropDownList>
                     </td>
@@ -78,16 +87,26 @@
                     </td>
                     <td>
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxPeople" CssClass="auto-style6" ErrorMessage="Number is required."></asp:RequiredFieldValidator>
+                         <br />
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxPeople" CssClass="auto-style6" ErrorMessage="Number should be from 1 to 20" ValidationExpression="^([1-9]|1[0-9]|20)$"></asp:RegularExpressionValidator>
                     </td>
                </tr>
                <tr>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style8">
-                         <asp:Button ID="ButtonSubmit" runat="server" OnClick="Button1_Click" Text="Submit" />
+                         <asp:Button ID="ButtonSubmit" runat="server" OnClick="ButtonSubmit_Click" Text="Submit" Width="80px" />
                     </td>
                     <td class="auto-style9">
 &nbsp;<br />
                     </td>
+               </tr>
+               <tr>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style8">
+                         <asp:Button ID="ButtonBack" runat="server" OnClick="ButtonBack_Click" Text="Go Back" Width="80px" CausesValidation="False"/>
+                    </td>
+                    <td class="auto-style9">
+                         &nbsp;</td>
                </tr>
                </table>
      <p>

@@ -11,4 +11,8 @@ public partial class Manage : System.Web.UI.Page
     {
 
     }
+    protected void SqlDataSourceAvailable_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
+
+    }
 }

@@ -9,19 +9,23 @@
      <p>
           <asp:SqlDataSource ID="SqlDataSourceRegistration" runat="server" 
                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-               SelectCommand="SELECT * FROM [Reservation]" >
+               SelectCommand="SELECT [Rnum], [NoOfPeople], [Date], [Time], [TableView] FROM [Reservation]" DeleteCommand="DELETE FROM Reservation
+WHERE Rnum = @Rnum" >
+               <DeleteParameters>
+                    <asp:Parameter Name="Rnum" />
+               </DeleteParameters>
           </asp:SqlDataSource>
  
 
 
           <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSourceRegistration" DataKeyNames="Rnum">
                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" />
                     <asp:BoundField DataField="Rnum" HeaderText="Rnum" InsertVisible="False" ReadOnly="True" SortExpression="Rnum" />
                     <asp:BoundField DataField="NoOfPeople" HeaderText="NoOfPeople" SortExpression="NoOfPeople" />
                     <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                    <asp:BoundField DataField="Time" HeaderText="Time" SortExpression="Time" />
                     <asp:BoundField DataField="TableView" HeaderText="TableView" SortExpression="TableView" />
-                    <asp:BoundField DataField="AvailableSeat" HeaderText="AvailableSeat" SortExpression="AvailableSeat" />
-                    <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
                </Columns>
                <FooterStyle BackColor="White" ForeColor="#000066" />
                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -35,6 +39,9 @@
           </asp:GridView>
      </p>
      <p>
+          <asp:Button ID="ButtonBack" runat="server" OnClick="ButtonBack_Click" Text="Log Out" Width="200px" />
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <asp:Button ID="ButtonNew" runat="server" OnClick="ButtonNew_Click" Text="Make another Reservation" Width="200px" />
      </p>
 </asp:Content>
 

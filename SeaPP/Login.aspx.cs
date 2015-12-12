@@ -58,13 +58,16 @@ public partial class Login : System.Web.UI.Page
               if (data.HasRows) // username and password match
               {
                    conn.Close();
-                   Response.Redirect("Reservation.aspx");
+                   Response.Redirect("NewReservation.aspx");
               }
               else
               {
                    conn.Close();
                    // display error here
-                   Response.Write("The UserName or Password is not corrected");
+                   //Response.Write("The UserName or Password is not corrected");
+                   // display message box
+                   string myStringVariable = "The UserName or Password is not corrected";
+                   ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + myStringVariable + "');", true);
               }
 
 

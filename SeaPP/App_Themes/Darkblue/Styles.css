@@ -1,4 +1,4 @@
-﻿*
+*
 {
     font-family: Verdana;
 }
@@ -10,6 +10,8 @@ body
     */
     margin: 0;
     background-image: url(Images/SeaPattern.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a
